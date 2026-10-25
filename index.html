@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Petal &amp; Parcel</title>
+  <meta name="description" content="Gift hampers, photo frames, treat boxes and flower bouquets, packed with care and delivered to their door." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <div class="nav__side">
+        <button class="icon-btn nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button class="icon-btn" id="userBtn" aria-label="Account">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.8 21c.7-4.4 4-6.6 8.2-6.6s7.5 2.2 8.2 6.6"/></svg>
+        </button>
+      </div>
+      <a href="#home" class="logo">Petal <span>&amp;</span> Parcel</a>
+      <div class="nav__side nav__side--end">
+        <button class="icon-btn" id="searchBtn" aria-label="Search gifts">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m15.6 15.6 5.4 5.4"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartOpen" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.1 12H6.1z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+      </div>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#occasions">Occasions</a>
+        <a href="#shop">Shop</a>
+        <a href="#combo">Combos</a>
+        <a href="#how">How it works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#bulk">Bulk gifting</a>
+      </nav>
+    </div>
+    <div class="announce" id="announce" role="region" aria-label="Offers" aria-live="off">
+      <div class="announce__track" id="announceTrack">
+        <p class="announce__slide">Get Free Shipping on Orders above ₹500</p>
+        <p class="announce__slide">Use code <strong>GIFT10</strong> for 10% off your first gift</p>
+        <p class="announce__slide">Add a free gift message and pick your delivery date</p>
+      </div>
+      <div class="announce__dots" id="announceDots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__glow hero__glow--a"></div>
+      <div class="hero__glow hero__glow--b"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow fade" style="--d:0s">Hampers, frames and flowers</p>
+          <h1 class="hero__title fade" style="--d:.08s">Gifts that say it <em>better.</em></h1>
+          <p class="hero__sub fade" style="--d:.16s">Hand-packed hampers, personalised photo frames, treat boxes and fresh bouquets. Add a message, pick a date and we deliver it wrapped.</p>
+          <div class="hero__actions fade" style="--d:.24s">
+            <a href="#shop" class="btn">Shop gifts</a>
+            <a href="#occasions" class="btn btn--ghost">Shop by occasion</a>
+          </div>
+          <ul class="perks fade" style="--d:.32s">
+            <li><strong>Gift message</strong><span>on every order</span></li>
+            <li><strong>Pick a date</strong><span>surprise them on time</span></li>
+            <li><strong>Code GIFT10</strong><span>10% off your first gift</span></li>
+          </ul>
+        </div>
+        <div class="collage fade" style="--d:.2s" aria-hidden="true">
+          <div class="tile tile--a"><img src="birthday_bouquet.jpg" alt="" width="600" height="600" /></div>
+          <div class="tile tile--b"><img src="hamper.jpg" alt="" width="600" height="600" /></div>
+          <div class="tile tile--c"><img src="bouquet.jpg" alt="" width="600" height="600" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OCCASIONS -->
+    <section class="section section--alt" id="occasions">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Shop by occasion</p>
+          <h2>Who is the gift for?</h2>
+          <p class="muted">Pick an occasion and we will show the gifts that suit it.</p>
+        </div>
+        <div class="occ" id="occGrid"></div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">The gift shop</p>
+          <h2>Pick something they will keep</h2>
+          <p class="muted">Twelve placeholder gifts across four categories. Photos are stand-ins for your own product pictures.</p>
+        </div>
+
+        <div class="controls">
+          <label class="search">
+            <span class="sr">Search gifts</span>
+            <input type="search" id="search" placeholder="Search gifts" autocomplete="off" />
+          </label>
+          <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+          <label class="sort">
+            <span class="sr">Sort gifts</span>
+            <select id="sort">
+              <option value="featured">Featured</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </label>
+        </div>
+        <div class="status">
+          <p class="muted small" id="resultCount" aria-live="polite"></p>
+          <button class="pill" id="occClear" hidden></button>
+        </div>
+
+        <div class="grid" id="productGrid"></div>
+        <p class="empty" id="emptyState" hidden>No gifts match your search. Try another word or clear the filters.</p>
+      </div>
+    </section>
+
+    <!-- COMBO -->
+    <section class="section section--alt" id="combo">
+      <div class="container">
+        <div class="combo">
+          <div>
+            <p class="eyebrow">Popular combo</p>
+            <h2>The Birthday Surprise</h2>
+            <p class="muted">A mixed bouquet, a Kinder Joy treat box and a personalised collage frame. Our most ordered trio for birthdays.</p>
+            <p class="combo__price">₹2,997 <small>Add code GIFT10 at checkout to save 10%</small></p>
+            <button class="btn" id="comboBtn" data-combo="p11,p7,p4">Add the combo to cart</button>
+          </div>
+          <ul class="combo__list">
+            <li><span>Mixed Seasonal Bouquet</span><strong>₹1,299</strong></li>
+            <li><span>Kinder Joy Treat Box</span><strong>₹799</strong></li>
+            <li><span>Personalised Collage Frame</span><strong>₹899</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">How it works</p>
+          <h2>From cart to doorstep</h2>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="step__n">1</span><h3>Choose a gift</h3><p>Browse by category or occasion and add your pick to the cart.</p></li>
+          <li class="step"><span class="step__n">2</span><h3>Add your touch</h3><p>Write a gift message, choose a delivery date and share photos for frames.</p></li>
+          <li class="step"><span class="step__n">3</span><h3>We pack it</h3><p>Every order is wrapped by hand, with flowers cut fresh that morning.</p></li>
+          <li class="step"><span class="step__n">4</span><h3>They smile</h3><p>Delivered on the date you picked, with your message tucked inside.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Happy gifters</p>
+          <h2>Gifts that landed well</h2>
+        </div>
+        <div class="reviews">
+          <figure class="quote">
+            <blockquote>“The bouquet arrived fresh and the message card made my mother cry, in a good way.”</blockquote>
+            <figcaption><span class="avatar">PN</span><div><strong>Priya N.</strong><small>Sent a bouquet</small></div></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Our collage frame looks so good on the wall. The photos were printed sharp and bright.”</blockquote>
+            <figcaption><span class="avatar">RK</span><div><strong>Rohan K.</strong><small>Anniversary gift</small></div></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Ordered the treat box for my nephew's birthday. He did not share a single one.”</blockquote>
+            <figcaption><span class="avatar">SM</span><div><strong>Sneha M.</strong><small>Birthday gift</small></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- BULK GIFTING -->
+    <section class="section cta" id="bulk">
+      <div class="container">
+        <div class="cta__box">
+          <div>
+            <p class="eyebrow">Weddings, offices and festivals</p>
+            <h2>Gifting in bulk?</h2>
+            <p class="muted">Tell us how many gifts you need. We will send a quote with custom branding options within one working day.</p>
+          </div>
+          <form class="form" id="bulkForm" novalidate>
+            <label for="bulkName">Name
+              <input type="text" id="bulkName" name="name" placeholder="Your name" required />
+            </label>
+            <label for="bulkEmail">Email
+              <input type="email" id="bulkEmail" name="email" placeholder="you@example.com" required />
+            </label>
+            <label for="bulkQty">Number of gifts
+              <input type="number" id="bulkQty" name="qty" min="10" value="25" />
+            </label>
+            <button type="submit" class="btn btn--block">Request a quote</button>
+            <p class="form__msg" id="bulkMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a href="#home" class="logo">Petal <span>&amp;</span> Parcel</a>
+        <p class="muted small">Gift hampers, frames and flowers.<br />123 Placeholder Street, Your City</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Shop</h4>
+          <a href="#shop">All gifts</a>
+          <a href="#occasions">By occasion</a>
+          <a href="#combo">Combos</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <span>hello@petalparcel.example</span>
+          <span>+91 00000 00000</span>
+          <span class="muted small">Daily, 9am–9pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p class="muted small">&copy; <span id="year"></span> Petal &amp; Parcel. A fictional brand for demonstration.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Your cart</h3>
+      <button class="link-btn" id="cartClose">Close</button>
+    </div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__foot" id="cartFoot">
+      <div class="gift">
+        <label for="giftMsg">Gift message (optional)
+          <textarea id="giftMsg" rows="2" maxlength="150" placeholder="Happy birthday! Wishing you a wonderful year."></textarea>
+        </label>
+        <label for="delDate">Delivery date
+          <input type="date" id="delDate" />
+        </label>
+      </div>
+      <form class="coupon" id="couponForm" novalidate>
+        <input type="text" id="couponInput" placeholder="Coupon code (try GIFT10)" aria-label="Coupon code" autocomplete="off" />
+        <button type="submit" class="btn btn--small btn--ghost">Apply</button>
+      </form>
+      <p class="coupon__msg" id="couponMsg" role="status" aria-live="polite"></p>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="tSub">₹0</dd></div>
+        <div id="tDiscRow" hidden><dt>Discount</dt><dd id="tDisc">₹0</dd></div>
+        <div><dt>Delivery</dt><dd id="tShip">₹0</dd></div>
+        <div class="totals__total"><dt>Total</dt><dd id="tTotal">₹0</dd></div>
+      </dl>
+      <button class="btn btn--block" id="checkoutBtn">Place order</button>
+      <p class="muted small center-text">Demo shop. No payment is taken.</p>
+    </div>
+  </aside>
+  <a class="wa" href="https://wa.me/910000000000?text=Hi%20Petal%20%26%20Parcel%2C%20I%20would%20like%20to%20order%20a%20gift" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
